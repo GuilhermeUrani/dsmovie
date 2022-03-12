@@ -25,6 +25,7 @@ public class ScoreService {
 	@Autowired
 	private ScoreRepository scoreRepository;
 
+	@SuppressWarnings("static-access")
 	@Transactional
 	public MovieDTO saveScore(ScoreDTO dto) {
 

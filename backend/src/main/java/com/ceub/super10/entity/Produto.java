@@ -1,38 +1,30 @@
-package com.devsuperior.dsmovie.entity;
-
-import java.util.HashSet;
-import java.util.Set;
+package com.ceub.super10.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_movie")
-public class Movie {
+@Table(name = "tb_produto")
+public class Produto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String title;
-	private Double score;
 	private Integer count;
 	private String image;
 	
-	@OneToMany(mappedBy = "id.movie")
-	private Set<Score> scores =  new HashSet<>();
 
-	public Movie() {
+	public Produto() {
 
 	}
 
-	public Movie(Long id, String title, Double score, Integer count, String image) {
+	public Produto(Long id, String title, Double score, Integer count, String image) {
 		this.id = id;
 		this.title = title;
-		this.score = score;
 		this.count = count;
 		this.image = image;
 	}
@@ -53,13 +45,6 @@ public class Movie {
 		this.title = title;
 	}
 
-	public Double getScore() {
-		return score;
-	}
-
-	public void setScore(Double score) {
-		this.score = score;
-	}
 
 	public Integer getCount() {
 		return count;
@@ -77,9 +62,6 @@ public class Movie {
 		this.image = image;
 	}
 
-	public Set<Score> getScores() {
-		return scores;
-	}
 	
 	
 

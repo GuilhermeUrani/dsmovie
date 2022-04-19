@@ -1,4 +1,4 @@
-package com.devsuperior.dsmovie.controllers;
+package com.ceub.super10.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -8,23 +8,23 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devsuperior.dsmovie.dto.MovieDTO;
-import com.devsuperior.dsmovie.services.MovieService;
+import com.ceub.super10.dto.ProdutoDTO;
+import com.ceub.super10.services.ProdutoService;
 
 @RestController
-@RequestMapping(value = "/movies")
-public class MovieController {
+@RequestMapping(value = "/produtos")
+public class ProdutoController {
 
 	@Autowired
-	private MovieService service;
+	private ProdutoService service;
 
 	@GetMapping
-	public Page<MovieDTO> findAll(Pageable pageable) {
+	public Page<ProdutoDTO> findAll(Pageable pageable) {
 		return service.findAll(pageable);
 	}
 	
 	@GetMapping(value = "/{id}")
-	public MovieDTO findById(@PathVariable Long id) {
+	public ProdutoDTO findById(@PathVariable Long id) {
 		return service.findById(id);
 	}
 

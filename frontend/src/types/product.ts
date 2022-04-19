@@ -1,4 +1,4 @@
-export type Movie = {
+export type Product = {
     id: number;
     title: string;
     score: number;
@@ -6,8 +6,8 @@ export type Movie = {
     image: string;
 }
 
-export type MoviePage = {
-    content: Movie[];
+export type ProductPage = {
+    content: Product[];
     last: boolean;
     totalPages: number;
     totalElements: number;

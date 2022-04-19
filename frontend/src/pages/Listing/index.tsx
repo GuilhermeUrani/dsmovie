@@ -3,13 +3,13 @@ import MovieCard from "components/MovieCard";
 import Pagination from "components/Pagination";
 import { useEffect, useState } from "react";
 import { BASE_URL } from "utils/requests";
-import { MoviePage } from "types/movie";
+import { ProductPage } from "types/product";
 import "./styles.css";
 
 function Listing() {
   const [pageNumber, setPageNumber] = useState(0);
 
-  const [page, setPage] = useState<MoviePage>({
+  const [page, setPage] = useState<ProductPage>({
     content: [],
     last: true,
     totalPages: 0,
@@ -23,9 +23,9 @@ function Listing() {
 
   useEffect(() => {
     axios
-      .get(`${BASE_URL}/movies?size=12&page=${pageNumber}&sort=id`)
+      .get(`${BASE_URL}/produtos?size=12&page=${pageNumber}&sort=id`)
       .then((response) => {
-        const data = response.data as MoviePage;
+        const data = response.data as ProductPage;
         setPage(data);
       });
   }, [pageNumber]);

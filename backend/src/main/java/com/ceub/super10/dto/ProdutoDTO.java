@@ -1,33 +1,30 @@
-package com.devsuperior.dsmovie.dto;
+package com.ceub.super10.dto;
 
-import com.devsuperior.dsmovie.entity.Movie;
+import com.ceub.super10.entity.Produto;
 
-public class MovieDTO {
+public class ProdutoDTO {
 	
 	private Long id;
 	private String title;
-	private Double score;
 	private Integer count;
 	private String image;
 	
-	public MovieDTO() {
+	public ProdutoDTO() {
 		
 	}
 
-	public MovieDTO(Long id, String title, Double score, Integer count, String image) {
+	public ProdutoDTO(Long id, String title, Double score, Integer count, String image) {
 		this.id = id;
 		this.title = title;
-		this.score = score;
 		this.count = count;
 		this.image = image;
 	}
 	
-	public MovieDTO(Movie movie) {
-		id = movie.getId();
-		title = movie.getTitle();
-		score = movie.getScore();
-		count = movie.getCount();
-		image = movie.getImage();
+	public ProdutoDTO(Produto produto) {
+		id = produto.getId();
+		title = produto.getTitle();
+		count = produto.getCount();
+		image = produto.getImage();
 	}
 
 	public Long getId() {
@@ -44,14 +41,6 @@ public class MovieDTO {
 
 	public void setTitle(String title) {
 		this.title = title;
-	}
-
-	public Double getScore() {
-		return score;
-	}
-
-	public void setScore(Double score) {
-		this.score = score;
 	}
 
 	public Integer getCount() {

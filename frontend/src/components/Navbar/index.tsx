@@ -5,7 +5,7 @@ function Navbar() {
     <header>
       <nav className="container">
         <div className="dsmovie-nav-content">
-          <h1>DSMovie</h1>
+          <img src="/assets/img/LogoSuper10.svg"></img>
           <a href="https://github.com/GuilhermeUrani/dsmovie">
             <div className="dsmovie-contact-container">
               <GithubIcon />

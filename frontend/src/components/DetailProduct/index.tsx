@@ -1,23 +1,23 @@
 import axios, { AxiosRequestConfig } from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Movie } from "types/movie";
+import { Product } from "types/product";
 import { BASE_URL } from "utils/requests";
 import { validateEmail } from "utils/validate";
 import "./styles.css";
 
 type Props = {
-  movieId: string;
+  productId: string;
 };
 
-function FormCard({ movieId }: Props) {
-  const [movie, setMovie] = useState<Movie>();
+function FormCard({ productId }: Props) {
+  const [product, setProduct] = useState<Product>();
 
   useEffect(() => {
-    axios.get(`${BASE_URL}/movies/${movieId}`).then((response) => {
-      setMovie(response.data);
+    axios.get(`${BASE_URL}/produtos/${productId}`).then((response) => {
+      setProduct(response.data);
     });
-  }, [movieId]);
+  }, [productId]);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -35,7 +35,7 @@ function FormCard({ movieId }: Props) {
       url: "/scores",
       data: {
         email: email,
-        movieId: movieId,
+        productId: productId,
         score: score
       }
     };
@@ -49,34 +49,20 @@ function FormCard({ movieId }: Props) {
     <div className="dsmovie-form-container">
       <img
         className="dsmovie-movie-card-image"
-        src={movie?.image}
-        alt={movie?.title}
+        src={product?.image}
+        alt={product?.title}
       />
       <div className="dsmovie-card-bottom-container">
-        <h3>{movie?.title}</h3>
+        <h3>{product?.title}</h3>
         <form className="dsmovie-form" onSubmit={handleSubmit}>
-          <div className="form-group dsmovie-form-group">
-            <label htmlFor="email">Informe seu email</label>
-            <input type="email" className="form-control" id="email" />
-          </div>
-          <div className="form-group dsmovie-form-group">
-            <label htmlFor="score">Informe sua avaliação</label>
-            <select className="form-control" id="score">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
           <div className="dsmovie-form-btn-container">
             <button type="submit" className="btn btn-primary dsmovie-btn">
-              Salvar
+              Adicionar 
             </button>
           </div>
         </form>
         <Link to="/">
-          <button className="btn btn-primary dsmovie-btn mt-3">Cancelar</button>
+          
         </Link>
       </div>
     </div>

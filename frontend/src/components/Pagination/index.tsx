@@ -1,9 +1,9 @@
 import {ReactComponent as Arrow} from 'assets/img/arrow.svg'
-import { MoviePage } from 'types/movie';
+import { ProductPage } from 'types/product';
 import './style.css';
 
 type Props ={
-  page: MoviePage
+  page: ProductPage
   onChange: Function;
 }
 
@@ -20,7 +20,9 @@ function Pagination({page, onChange} : Props) {
           <Arrow className="dsmovie-flip-horizontal" />
         </button>
       </div>
-    </div>
+     </div>
+    
+    
   ); 
 }
 

@@ -1,12 +1,12 @@
-package com.devsuperior.dsmovie;
+package com.ceub.super10;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DsmovieApplication {
+public class Super10Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DsmovieApplication.class, args);
+		SpringApplication.run(Super10Application.class, args);
 	}
 }
